@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" integrity="sha512-qv+OOE9Iqia62cS1jejFAOSowwy/D2I6fy+UUnwTOxzIVQbx7Adq1JMFb4C6g2XXvLOs/E9JGO+HX9DM3HvjVg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@700&display=swap" rel="stylesheet">
+    <style>
+        /* Add some basic styling for demonstration purposes */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        /* Style for the navbar */
+        .navbar {
+            background-color: #3498db;
+            padding: 15px;
+            text-align: left;
+            color: #fff;
+        }
+
+        /* Style for the back button */
+        .back-button {
+            padding: 10px;
+            background-color: #2980b9;
+            color: #fff;
+            border: none;
+            cursor: pointer;
+        }
+
+        /* Style for the container holding the images and videos */
+        .media-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            padding: 20px;
+        }
+
+        /* Style for individual media items */
+        .media-container img,
+        .media-container iframe {
+            width: 30%; /* Adjust as needed based on your design */
+            margin: 10px; /* Add some space between images and videos */
+            cursor: pointer;
+            border: white 5px solid;
+            border-radius: 20px;
+        }
+
+        /* Adjustments for smaller screens */
+        @media (max-width: 767px) {
+            .media-container img,
+            .media-container iframe {
+                width: 100%; /* Make items take up full width on smaller screens */
+            }
+        }
+
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgba(0, 0, 0, 0.9);
+        }
+
+        .modal-content {
+            margin: 5% auto;
+            display: block;
+            max-width: 700px;
+        }
+
+        .modal img {
+            width: 100%;
+        }
+
+        .close {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            color: #fff;
+            font-size: 40px; /* Increased close button size */
+            font-weight: bold;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body style="background: #272727;">
+
+<!-- Navbar with back button -->
+
+<h1 style="margin-left: 45px;margin-top: 40px;margin-bottom: 6px;color: white;font-family: 'Josefin Sans', sans-serif;font-weight: bolder;">Uwais A A</h2>
+
+
+
+<div class="media-container">
+    <!-- Image 1 -->
+    <img src="1.jpg" alt="Image 1" onclick="openModal('1.jpg')">
+
+    <!-- Image 2 -->
+    <img src="2.jpg" alt="Image 2" onclick="openModal('2.jpg')">
+
+    <!-- Image 3 -->
+    <img src="3.jpg" alt="Image 3" onclick="openModal('3.jpg')">
+
+    <!-- Image 4 -->
+    <img src="4.jpg" alt="Image 4" onclick="openModal('4.jpg')">
+
+    <!-- Image 5 -->
+    <img src="5.jpg" alt="Image 5" onclick="openModal('5.jpg')">
+
+    <!-- Image 6 -->
+    <img src="6.jpg" alt="Image 6" onclick="openModal('6.jpg')"></div>
+<br><br><div class="media-container">
+    <!-- YouTube Video 1 -->
+    <iframe width="560" height="315" src="https://www.youtube.com/embed/YOUR_VIDEO_ID_1" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+
+    <!-- YouTube Video 2 -->
+    <iframe width="560" height="315" src="https://www.youtube.com/embed/YOUR_VIDEO_ID_2" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+    <iframe width="560" height="315" src="https://www.youtube.com/embed/YOUR_VIDEO_ID_2" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+
+   
+</div>
+
+<!-- Modal for displaying individual images -->
+<div id="myModal" class="modal">
+    <div class="modal-content">
+        <span class="close" onclick="closeModal()">&times;</span>
+        <img id="modalImg" alt="Modal Image">
+    </div>
+</div>
+
+<script>
+    function goBack() {
+        window.history.back();
+    }
+
+    function openModal(imageSrc) {
+        document.getElementById('modalImg').src = imageSrc;
+        document.getElementById('myModal').style.display = 'block';
+    }
+
+    function closeModal() {
+        document.getElementById('myModal').style.display = 'none';
+    }
+</script>
+
+</body>
+</html>
